@@ -37,7 +37,7 @@ function bdCanvas() {
 
   let ctx = canvas.getContext("2d");
 
-  Stars = function (w, h) {
+  let stars = function (w, h) {
     this.x = Math.random() * w;
     this.y = Math.random() * h;
     this.radius = opts.minRadius + Math.random() * (opts.maxRadius - opts.minRadius);
@@ -65,18 +65,22 @@ function bdCanvas() {
     }
   }
 
+  let arrStars;
   // создание массива звезд и их отрисовка с помощью функции draw()
   function setup() {
     arrStars = [];
 
     for (let i = 0; i < (w / 40) * (h / 40); i++) { // определем количество звезд относительно размеров окна (w/h)
-      arrStars.push(new Stars(w, h));
+      arrStars.push(new stars(w, h));
       arrStars[i].draw();
     }
     loop();
   }
 
   setup();
+
+  // Анимирует звезды функция loop, которая перебирает все точки, обновляет их их и заново отрисовывает
+  let animations;
 
   function loop() {
     animations = setInterval(function () {
@@ -101,20 +105,20 @@ anime({
   targets: '.planet-earth',
   direction: 'alternate',
   loop: true,
-  rotate: -360,
-  easing: 'easeInOutQuad',
-  duration: 10000
+  rotate: 360,
+  easing: 'linear',
+  duration: 60000
 });
 
 // Yellow planet animation 
 anime({
   targets: [
     '.planet-yellow > svg > path:nth-child(13)',
-    '.planet-yellow > svg > path:nth-child(14)', 
-    '.planet-yellow > svg > path:nth-child(15)', 
-    '.planet-yellow > svg > path:nth-child(16)', 
+    '.planet-yellow > svg > path:nth-child(14)',
+    '.planet-yellow > svg > path:nth-child(15)',
+    '.planet-yellow > svg > path:nth-child(16)',
     '.planet-yellow > svg > path:nth-child(17)',
-    '.planet-yellow > svg > path:nth-child(18)', 
+    '.planet-yellow > svg > path:nth-child(18)',
     '.planet-yellow > svg > path:nth-child(21)',
     '.planet-yellow > svg > path:nth-child(24)'
   ],
@@ -128,7 +132,7 @@ anime({
 
 anime({
   targets: '.planet-yellow',
-  rotate: 360,
+  rotate: -360,
   direction: 'alternate',
   loop: true,
   easing: 'linear',
@@ -166,12 +170,21 @@ anime({
   duration: 2000
 });
 
+anime({
+  targets: '.planet-blue',
+  translateY: 10,
+  direction: 'alternate',
+  loop: true,
+  easing: 'linear',
+  duration: 5000
+});
+
 
 // Red planet animation
 anime({
   targets: [
-    '.planet-red > svg > path:nth-child(4)', 
-    '.planet-red > svg > path:nth-child(8)', 
+    '.planet-red > svg > path:nth-child(4)',
+    '.planet-red > svg > path:nth-child(8)',
     '.planet-red > svg > path:nth-child(11)'
   ],
   fill: '#000',
@@ -194,8 +207,8 @@ anime({
 // Grey planet animation
 anime({
   targets: [
-    '.planet-grey > svg > path:nth-child(3)', 
-    '.planet-grey > svg > path:nth-child(4)', 
+    '.planet-grey > svg > path:nth-child(3)',
+    '.planet-grey > svg > path:nth-child(4)',
     '.planet-grey > svg > path:nth-child(5)'
   ],
   opacity: 0.1,
@@ -213,21 +226,22 @@ anime({
   duration: 60000
 });
 
+// anime({
+//   targets: '.planet-grey > svg > path:nth-child(1)',
+//   opacity: 0.1,
+//   easing: 'easeInOutQuad',
+//   direction: 'alternate',
+//   duration: 3000,
+//   loop: true
+// });
+
 anime({
-  targets: '.planet-grey > svg > path:nth-child(1)',
-  opacity: 0.1,
-  easing: 'easeInOutQuad',
-  direction: 'alternate',
-  duration: 3000,
-  loop: true
-});
-anime({
-  targets: '.planet-red',
-  rotate: -360,
+  targets: '.planet-grey',
+  translateY: 10,
   direction: 'alternate',
   loop: true,
   easing: 'linear',
-  duration: 60000
+  duration: 5000
 });
 
 
