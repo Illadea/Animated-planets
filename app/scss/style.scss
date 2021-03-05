@@ -56,11 +56,50 @@
 .grid-planet-blue { grid-area: grid-planet-blue; }
 
 
-.grid-title {
+.text-animation {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    animation: blinkCursor 0.8s steps(3) infinite;
+  }
+}
+
+.text-animation h1 {
+  position: relative;
   color: #fff;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 45px;
+  letter-spacing: 0.2rem;
+  animation: typing 8s steps(16) infinite;
+  overflow: hidden;
+  white-space: nowrap;
 }
+
+@keyframes blinkCursor {
+  0%, 75% {
+    opacity: 1;
+  }
+  76%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes typing {
+  0%, 90%,100% {
+    width: 0;
+  }
+  30%, 60% {
+    width: 483.2px;
+  }
+}
+
+
 
 @media (max-width: 1110px) {
   .grid-hero-1, .grid-hero-2, .grid-hero-3, .grid-hero-4 {
@@ -79,7 +118,15 @@
 }
 
 @media (max-width: 520px) {
-  .grid-title {
-    font-size: 30px;
+  .text-animation h1 {
+    font-size: 25px;
+  }
+  @keyframes typing {
+    0%, 90%, 100% {
+      width: 0;
+    }
+    30%, 60% {
+      width: 291.2px;
+    }
   }
 }

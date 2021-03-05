@@ -109,12 +109,14 @@ anime({
 // Yellow planet animation 
 anime({
   targets: [
-    '.planet-yellow > svg > path:nth-child(16)', 
+    '.planet-yellow > svg > path:nth-child(13)',
     '.planet-yellow > svg > path:nth-child(14)', 
-    '.planet-yellow > svg > path:nth-child(18)', 
-    '.planet-yellow > svg > path:nth-child(17)', 
     '.planet-yellow > svg > path:nth-child(15)', 
-    '.planet-yellow > svg > path:nth-child(13)'
+    '.planet-yellow > svg > path:nth-child(16)', 
+    '.planet-yellow > svg > path:nth-child(17)',
+    '.planet-yellow > svg > path:nth-child(18)', 
+    '.planet-yellow > svg > path:nth-child(21)',
+    '.planet-yellow > svg > path:nth-child(24)'
   ],
   fill: '#f60606',
   opacity: 0.8,
@@ -137,14 +139,20 @@ anime({
 // Blue planet animation 
 anime({
   targets: [
+    '.planet-blue > svg > path:nth-child(25)',
+    '.planet-blue > svg > path:nth-child(26)',
     '.planet-blue > svg > path:nth-child(30)',
+    '.planet-blue > svg > path:nth-child(31)',
     '.planet-blue > svg > path:nth-child(32)',
     '.planet-blue > svg > path:nth-child(33)',
+    '.planet-blue > svg > path:nth-child(40)',
     '.planet-blue > svg > path:nth-child(41)',
     '.planet-blue > svg > path:nth-child(42)',
     '.planet-blue > svg > path:nth-child(43)',
     '.planet-blue > svg > path:nth-child(51)',
     '.planet-blue > svg > path:nth-child(53)',
+    '.planet-blue > svg > path:nth-child(54)',
+    '.planet-blue > svg > path:nth-child(55)',
     '.planet-blue > svg > path:nth-child(56)',
     '.planet-blue > svg > path:nth-child(59)',
     '.planet-blue > svg > path:nth-child(60)',
