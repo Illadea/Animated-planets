@@ -59,6 +59,7 @@
 .grid-title {
   color: #fff;
   font-family: 'IBM Plex Mono', monospace;
+  font-size: 45px;
 }
 
 @media (max-width: 1110px) {
@@ -74,5 +75,11 @@
     & > div {
       padding: 25px;
     }
+  }
+}
+
+@media (max-width: 520px) {
+  .grid-title {
+    font-size: 30px;
   }
 }
