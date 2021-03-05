@@ -75,7 +75,7 @@
   color: #fff;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 45px;
-  letter-spacing: 0.2rem;
+  letter-spacing: 5px;
   animation: typing 8s steps(16) infinite;
   overflow: hidden;
   white-space: nowrap;
@@ -95,10 +95,9 @@
     width: 0;
   }
   30%, 60% {
-    width: 483.2px;
+    width: 512px;
   }
 }
-
 
 
 @media (max-width: 1110px) {
@@ -107,7 +106,7 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 770px) {
   .grid {
     display: flex;
     flex-direction: column;
@@ -115,18 +114,16 @@
       padding: 25px;
     }
   }
-}
-
-@media (max-width: 520px) {
   .text-animation h1 {
     font-size: 25px;
+    letter-spacing: 2px;
   }
-  @keyframes typing {
-    0%, 90%, 100% {
+    @keyframes typing {
+    0%, 90%,100% {
       width: 0;
     }
     30%, 60% {
-      width: 291.2px;
+      width: 300px;
     }
   }
 }
