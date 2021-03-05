@@ -1,3 +1,78 @@
-@import "vars";
+@import "libs";
 @import "global";
 
+.main {
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+}
+
+.canvas-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(70.99% 84.22% at 80.89% 12.01%, #890048 0%, #540048 50.56%, #000027 100%);
+}
+
+.hero-2 {
+  background: url(../images/hero-2.svg) no-repeat;
+  width: 70px;
+  height: 75px;
+  z-index: 2;
+}
+
+.motion-path > svg {
+  transform: rotate(90deg)
+}
+
+.grid {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+  "grid-hero-1 grid-title grid-title grid-title grid-hero-2"
+  "grid-hero-1 grid-planet-blue . grid-planet-red ."
+  ". . grid-planet-yellow . ."
+  "grid-hero-3 grid-planet-earth . grid-planet-grey grid-hero-4"
+  "grid-hero-3 . . . grid-hero-4";
+}
+
+.grid-title { grid-area: grid-title; }
+.grid-hero-1 { grid-area: grid-hero-1; }
+.grid-hero-2 { grid-area: grid-hero-2; }
+.grid-hero-3 { grid-area: grid-hero-3; }
+.grid-hero-4 { grid-area: grid-hero-4; }
+.grid-planet-red { grid-area: grid-planet-red; }
+.grid-planet-yellow { grid-area: grid-planet-yellow; }
+.grid-planet-grey { grid-area: grid-planet-grey; }
+.grid-planet-earth { grid-area: grid-planet-earth;  }
+.grid-planet-blue { grid-area: grid-planet-blue; }
+
+
+.grid-title {
+  color: #fff;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+@media (max-width: 1110px) {
+  .grid-hero-1, .grid-hero-2, .grid-hero-3, .grid-hero-4 {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+    & > div {
+      padding: 25px;
+    }
+  }
+}
