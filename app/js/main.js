@@ -226,15 +226,6 @@ anime({
   duration: 60000
 });
 
-// anime({
-//   targets: '.planet-grey > svg > path:nth-child(1)',
-//   opacity: 0.1,
-//   easing: 'easeInOutQuad',
-//   direction: 'alternate',
-//   duration: 3000,
-//   loop: true
-// });
-
 anime({
   targets: '.planet-grey',
   translateY: 10,
